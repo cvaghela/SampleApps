@@ -107,14 +107,17 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         generator.prepare()
         generator.impactOccurred()
         
-        //Fabric Answers for logSearch
+        
         if let searchKeyword = self.textField.text {
             
-            Answers.logSearch(withQuery: searchKeyword,
-                                       customAttributes: nil)
+            //Fabric Answers for logSearch
+//            Answers.logSearch(withQuery: searchKeyword,
+//                                       customAttributes: nil)
         } else {
-            Answers.logSearch(withQuery: "All",
-                              customAttributes: nil)
+            
+            //Fabric Answers for logSearch
+//            Answers.logSearch(withQuery: "All",
+//                              customAttributes: nil)
         }
     }
     
@@ -126,12 +129,12 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         generator.impactOccurred()
         
         //Fabric Answers for logAddToCart
-        Answers.logAddToCart(withPrice: 1.50,
-                                      currency: "USD",
-                                      itemName: "Answers Apple",
-                                      itemType: "Fruit",
-                                      itemId: "sku-100",
-                                      customAttributes: nil)
+//        Answers.logAddToCart(withPrice: 1.50,
+//                                      currency: "USD",
+//                                      itemName: "Answers Apple",
+//                                      itemType: "Fruit",
+//                                      itemId: "sku-100",
+//                                      customAttributes: nil)
     }
     
     
@@ -142,12 +145,12 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         generator.impactOccurred()
         
         //Fabric Answers for logAddToCart
-        Answers.logAddToCart(withPrice: 2.50,
-                             currency: "USD",
-                             itemName: "Answers Pear",
-                             itemType: "Fruit",
-                             itemId: "sku-200",
-                             customAttributes: nil)
+//        Answers.logAddToCart(withPrice: 2.50,
+//                             currency: "USD",
+//                             itemName: "Answers Pear",
+//                             itemType: "Fruit",
+//                             itemId: "sku-200",
+//                             customAttributes: nil)
     }
     
     @IBAction func orangeAddToCartButtonPressed(_ sender: Any) {
@@ -157,12 +160,12 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         generator.impactOccurred()
         
         //Fabric Answers for logAddToCart
-        Answers.logAddToCart(withPrice: 1.00,
-                             currency: "USD",
-                             itemName: "Answers Orange",
-                             itemType: "Fruit",
-                             itemId: "sku-300",
-                             customAttributes: nil)
+//        Answers.logAddToCart(withPrice: 1.00,
+//                             currency: "USD",
+//                             itemName: "Answers Orange",
+//                             itemType: "Fruit",
+//                             itemId: "sku-300",
+//                             customAttributes: nil)
     }
     
     @IBAction func purchaseEventBtnPressed(_ sender: Any) {
@@ -172,13 +175,13 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         generator.impactOccurred()
         
         //Fabric Answers for logPurchase
-        Answers.logPurchase(withPrice: 30,
-                            currency: "USD",
-                            success: true,
-                            itemName: "Fruit Basket",
-                            itemType: "Fruits",
-                            itemId: "APO-3",
-                            customAttributes: nil)
+//        Answers.logPurchase(withPrice: 30,
+//                            currency: "USD",
+//                            success: true,
+//                            itemName: "Fruit Basket",
+//                            itemType: "Fruits",
+//                            itemId: "APO-3",
+//                            customAttributes: nil)
     }
 }
 

@@ -28,6 +28,7 @@ class FirstViewController: UIViewController {
         generator.prepare()
         generator.impactOccurred()
         
+        //Fabric and Firebase set user email
         Crashlytics.sharedInstance().setUserEmail("test@email.com")
     }
     
@@ -37,6 +38,7 @@ class FirstViewController: UIViewController {
         generator.prepare()
         generator.impactOccurred()
         
+        //Fabric and Firebase set custom logs
         CLSLogv("Log awesomeness %d %d %@", getVaList([1, 2, "three"]))
     }
     
@@ -46,6 +48,7 @@ class FirstViewController: UIViewController {
         generator.prepare()
         generator.impactOccurred()
         
+        //Fabric and Firebase set custom keys
         Crashlytics.sharedInstance().setIntValue(42, forKey: "MeaningOfLife")
         Crashlytics.sharedInstance().setObjectValue("Test value", forKey: "last_UI_action")
 
@@ -55,6 +58,7 @@ class FirstViewController: UIViewController {
         let generator = UINotificationFeedbackGenerator()
         generator.notificationOccurred(.error)
         
+        //Fabric and Firebase test crash
         Crashlytics.sharedInstance().crash()
     }
     @IBAction func sendNonFatalPressed(_ sender: Any) {
@@ -69,6 +73,7 @@ class FirstViewController: UIViewController {
                                       "UserID": "John Doe"]
         let error: NSError = NSError(domain: "New Non-Fatal", code: -1001, userInfo: userInfo as? [String : Any])
         
+        //Fabric and Firebase send non-fatal exception
         Crashlytics.sharedInstance().recordError(error)
     }
 }
