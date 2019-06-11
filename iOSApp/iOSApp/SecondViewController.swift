@@ -8,6 +8,7 @@
 
 import UIKit
 import Crashlytics
+import Firebase
 
 class SecondViewController: UIViewController, UITextFieldDelegate {
 
@@ -113,11 +114,22 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
             //Fabric Answers for logSearch
 //            Answers.logSearch(withQuery: searchKeyword,
 //                                       customAttributes: nil)
+            
+            //Firebase Google Analytics for logEvent
+            Analytics.logEvent(AnalyticsEventSearch, parameters: [
+                AnalyticsParameterSearchTerm: searchKeyword
+                ])
+            
         } else {
             
             //Fabric Answers for logSearch
 //            Answers.logSearch(withQuery: "All",
 //                              customAttributes: nil)
+            
+            //Firebase Google Analytics for logEvent
+            Analytics.logEvent(AnalyticsEventSearch, parameters: [
+                AnalyticsParameterSearchTerm: "All"
+                ])
         }
     }
     
@@ -135,6 +147,15 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
 //                                      itemType: "Fruit",
 //                                      itemId: "sku-100",
 //                                      customAttributes: nil)
+        
+        //Firebase Google Analytics for logEvent
+        Analytics.logEvent(AnalyticsEventAddToCart, parameters: [
+            AnalyticsParameterPrice: 1.50,
+            AnalyticsParameterCurrency: "USD",
+            AnalyticsParameterItemName: "GA Apple",
+            AnalyticsParameterItemCategory: "Fruit",
+            AnalyticsParameterItemID: "sku-100"
+            ])
     }
     
     
@@ -151,6 +172,15 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
 //                             itemType: "Fruit",
 //                             itemId: "sku-200",
 //                             customAttributes: nil)
+        
+        //Firebase Google Analytics for logEvent
+        Analytics.logEvent(AnalyticsEventAddToCart, parameters: [
+            AnalyticsParameterPrice: 2.50,
+            AnalyticsParameterCurrency: "USD",
+            AnalyticsParameterItemName: "GA Pear",
+            AnalyticsParameterItemCategory: "Fruit",
+            AnalyticsParameterItemID: "sku-200"
+            ])
     }
     
     @IBAction func orangeAddToCartButtonPressed(_ sender: Any) {
@@ -166,6 +196,15 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
 //                             itemType: "Fruit",
 //                             itemId: "sku-300",
 //                             customAttributes: nil)
+        
+        //Firebase Google Analytics for logEvent
+        Analytics.logEvent(AnalyticsEventAddToCart, parameters: [
+            AnalyticsParameterPrice: 1.00,
+            AnalyticsParameterCurrency: "USD",
+            AnalyticsParameterItemName: "GA Orange",
+            AnalyticsParameterItemCategory: "Fruit",
+            AnalyticsParameterItemID: "sku-300"
+            ])
     }
     
     @IBAction func purchaseEventBtnPressed(_ sender: Any) {
@@ -182,6 +221,17 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
 //                            itemType: "Fruits",
 //                            itemId: "APO-3",
 //                            customAttributes: nil)
+        
+        //Firebase Google Analytics for logEvent
+        Analytics.logEvent(AnalyticsEventEcommercePurchase, parameters: [
+            AnalyticsParameterPrice: 30,
+            AnalyticsParameterCurrency: "USD",
+            AnalyticsParameterSuccess: "1",
+            AnalyticsParameterItemName: "Fruit Basket",
+            AnalyticsParameterItemCategory: "Fruits",
+            AnalyticsParameterItemID: "APO-3"
+            ])
+        
     }
 }
 
