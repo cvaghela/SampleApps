@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Crashlytics
 
 class SecondViewController: UIViewController, UITextFieldDelegate {
 
@@ -15,6 +16,8 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var textField: UITextField!
     @IBOutlet var tapticButtons: [UIButton]!
+    @IBOutlet weak var searchTextField: UITextField!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,32 +101,84 @@ class SecondViewController: UIViewController, UITextFieldDelegate {
         return true
     }
     
-    @IBAction func eventOneSendPressed(_ sender: Any) {
+    @IBAction func searchButtonPressed(_ sender: Any) {
         
-        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        let generator = UIImpactFeedbackGenerator(style: .light)
         generator.prepare()
         generator.impactOccurred()
+        
+        //Fabric Answers for logSearch
+        if let searchKeyword = self.textField.text {
+            
+            Answers.logSearch(withQuery: searchKeyword,
+                                       customAttributes: nil)
+        } else {
+            Answers.logSearch(withQuery: "All",
+                              customAttributes: nil)
+        }
     }
     
-    @IBAction func eventTwoSendPressed(_ sender: Any) {
+    
+    @IBAction func appleAddToCartButtonPressed(_ sender: Any) {
         
-        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        let generator = UIImpactFeedbackGenerator(style: .light)
         generator.prepare()
         generator.impactOccurred()
+        
+        //Fabric Answers for logAddToCart
+        Answers.logAddToCart(withPrice: 1.50,
+                                      currency: "USD",
+                                      itemName: "Answers Apple",
+                                      itemType: "Fruit",
+                                      itemId: "sku-100",
+                                      customAttributes: nil)
     }
     
     
-    @IBAction func eventThreeSendPressed(_ sender: Any) {
+    @IBAction func pearAddToCartButtonPressed(_ sender: Any) {
         
-        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        let generator = UIImpactFeedbackGenerator(style: .light)
         generator.prepare()
         generator.impactOccurred()
+        
+        //Fabric Answers for logAddToCart
+        Answers.logAddToCart(withPrice: 2.50,
+                             currency: "USD",
+                             itemName: "Answers Pear",
+                             itemType: "Fruit",
+                             itemId: "sku-200",
+                             customAttributes: nil)
     }
     
-    @IBAction func sliderMoved(_ sender: Any) {
+    @IBAction func orangeAddToCartButtonPressed(_ sender: Any) {
         
-        let generator = UIImpactFeedbackGenerator(style: .heavy)
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.prepare()
         generator.impactOccurred()
+        
+        //Fabric Answers for logAddToCart
+        Answers.logAddToCart(withPrice: 1.00,
+                             currency: "USD",
+                             itemName: "Answers Orange",
+                             itemType: "Fruit",
+                             itemId: "sku-300",
+                             customAttributes: nil)
+    }
+    
+    @IBAction func purchaseEventBtnPressed(_ sender: Any) {
+        
+        let generator = UIImpactFeedbackGenerator(style: .light)
+        generator.prepare()
+        generator.impactOccurred()
+        
+        //Fabric Answers for logPurchase
+        Answers.logPurchase(withPrice: 30,
+                            currency: "USD",
+                            success: true,
+                            itemName: "Fruit Basket",
+                            itemType: "Fruits",
+                            itemId: "APO-3",
+                            customAttributes: nil)
     }
 }
 
