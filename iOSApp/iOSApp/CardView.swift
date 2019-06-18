@@ -2,8 +2,7 @@
 //  CardView.swift
 //  iOSApp
 //
-//  Created by Chintan Vaghela on May/23/2019.
-//  Copyright © 2019 Jing Li. All rights reserved.
+//  Copyright © 2019 . All rights reserved.
 //
 
 import UIKit

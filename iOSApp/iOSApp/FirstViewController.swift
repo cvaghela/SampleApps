@@ -2,8 +2,7 @@
 //  FirstViewController.swift
 //  sample1
 //
-//  Created by Jing Li on 5/21/19.
-//  Copyright © 2019 Jing Li. All rights reserved.
+//  Copyright © 2019 . All rights reserved.
 //
 
 import UIKit
